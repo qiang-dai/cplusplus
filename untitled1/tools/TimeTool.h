@@ -51,5 +51,24 @@ int main()
     cout << "us day: " << s << endl;
     TimeTool::read_us_day(s, year, mon, day);
     cout << "read day: " << year << " " << mon << " " << day << endl;
+
+    s = TimeTool::get_date_full();
+    cout << "s: " << s << endl;
+    string d = IOTool::replace(s, '-', ' ');
+    cout << "d: " << d << endl;
+    d = IOTool::replace(s, ':', ' ');
+    cout << "d: " << d << endl;
+    d = IOTool::replace(s, ' ', '_');
+    cout << "d: " << d << endl;
+
+
+    s = TimeTool::get_date_full();
+    cout << "s: " << s << endl;
+    d = IOTool::replace_first(s, '-', ' ');
+    cout << "d: " << d << endl;
+    d = IOTool::replace_first(s, ':', ' ');
+    cout << "d: " << d << endl;
+    d = IOTool::replace_first(s, ' ', '_');
+    cout << "d: " << d << endl;
 }
 #endif //UNTITLED1_TIME_TOOL_H

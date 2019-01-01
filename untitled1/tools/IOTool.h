@@ -37,8 +37,8 @@ public:
     static double string2double(string s);
     static string size_to_read(long size);
     ///////////////////////////////////////////////////
-    static string replace(string src, string first, string second);
-
+    static string replace(string &src, char c, char d);
+    static string replace_first(string &src, char c, char d);
 };
 
 

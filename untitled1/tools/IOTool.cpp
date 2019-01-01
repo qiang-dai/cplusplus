@@ -190,11 +190,29 @@ string IOTool::size_to_read(long size)
     return s;
 }
 
-string IOTool::replace(string src, string first, string second)
+string IOTool::replace(string &src, char c, char d)
 {
+    string::iterator it = find(src.begin(), src.end(), c);
+    while(it != src.end())
+    {
+        auto x = src.erase(it);
+        src.insert(x, d);
+        it = find(x, src.end(), c);
+    }
+    return src;
+}
 
-    //string res = src.replace(src.find(first), second, src);
-    //return res;
+string IOTool::replace_first(string &src, char c, char d)
+{
+    string::iterator it = find(src.begin(), src.end(), c);
+    while(it != src.end())
+    {
+        auto x = src.erase(it);
+        src.insert(x, d);
+        it = find(x, src.end(), c);
+
+        break;
+    }
     return src;
 }
 

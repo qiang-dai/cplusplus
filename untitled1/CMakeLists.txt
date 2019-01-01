@@ -15,4 +15,4 @@ SET(SOURCE_FILES
         tt.cpp
         MyString.cpp
         )
-add_executable(untitled1 history/main.cpp history/main2.cpp Book.cpp Book.h X.cpp X.h Child.cpp Child.h tt.cpp tt.h MyString.cpp MyString.h history/main3.cpp history/main4.cpp history/main5.cpp history/main6.cpp tools/sort.h history/main7.cpp history/main8.cpp Test.cpp Test.h TestAdd.cpp TestAdd.h history/main9.cpp thread/thread1.cpp thread/thread2.cpp thread/thread3.cpp thread/thread4.cpp tools/TimeTool.cpp tools/TimeTool.h tools/IOTool.cpp tools/IOTool.h)
+add_executable(untitled1 history/main.cpp history/main2.cpp Book.cpp Book.h X.cpp X.h Child.cpp Child.h tt.cpp tt.h MyString.cpp MyString.h history/main3.cpp history/main4.cpp history/main5.cpp history/main6.cpp history/main7.cpp history/main8.cpp Test.cpp Test.h TestAdd.cpp TestAdd.h history/main9.cpp thread/thread1.cpp thread/thread2.cpp thread/thread3.cpp thread/thread4.cpp tools/TimeTool.cpp tools/TimeTool.h tools/IOTool.cpp tools/IOTool.h tools/FileTool.cpp tools/FileTool.h tools/ShellTool.cpp tools/ShellTool.h)
