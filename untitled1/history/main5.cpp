@@ -83,7 +83,7 @@ int main52(int argc, char *argv[]) {
     return 0;
 }
 
-int main() {
+int main55() {
     boost::scoped_array<int> pia(new int[10]);
     boost::scoped_array<int> pia2(new int[10]());
     //int *pia = new int[10];
