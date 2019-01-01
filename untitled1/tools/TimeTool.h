@@ -29,48 +29,4 @@ public:
     //1983-06-22
     static string read_day(string s, int &year, int &mon, int &day);
 };
-
-int maint1()
-{
-    cout << TimeTool::get_current_desc() << endl;
-    cout << "tick: " << TimeTool::get_tick() << endl;
-    cout << "day:  " << TimeTool::get_day() << endl;
-    cout << "second: " << TimeTool::get_date_second() << endl;
-    cout << "date full:" << TimeTool::get_date_full() << endl;
-    cout << "day underline: " << TimeTool::get_date_underline() << endl;
-
-    string s = TimeTool::get_day();
-    int year;
-    int mon;
-    int day;
-    TimeTool::read_day(s, year, mon, day);
-    cout << "day: " << s << endl;
-    cout << "read day: " << year << " " << mon << " " << day << endl;
-
-    s = TimeTool::get_us_day();
-    cout << "us day: " << s << endl;
-    TimeTool::read_us_day(s, year, mon, day);
-    cout << "read day: " << year << " " << mon << " " << day << endl;
-
-    s = TimeTool::get_date_full();
-    cout << "s: " << s << endl;
-    string d = IOTool::replace(s, '-', ' ');
-    cout << "d: " << d << endl;
-    d = IOTool::replace(s, ':', ' ');
-    cout << "d: " << d << endl;
-    d = IOTool::replace(s, ' ', '_');
-    cout << "d: " << d << endl;
-
-
-    s = TimeTool::get_date_full();
-    cout << "s: " << s << endl;
-    d = IOTool::replace_first(s, '-', ' ');
-    cout << "d: " << d << endl;
-    d = IOTool::replace_first(s, ':', ' ');
-    cout << "d: " << d << endl;
-    d = IOTool::replace_first(s, ' ', '_');
-    cout << "d: " << d << endl;
-
-    return 0;
-}
 #endif //UNTITLED1_TIME_TOOL_H

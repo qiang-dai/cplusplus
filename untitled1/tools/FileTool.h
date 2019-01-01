@@ -32,32 +32,4 @@ public:
             bool is_recursive = false);
 };
 
-int mainft1()
-{
-    //list<string> ls = FileTool::get_files("/Users/xinmei365/kika-content-manager", true);
-    list<string> ls = FileTool::get_files(".", true);
-    list<string>::iterator it;
-    for(it = ls.begin(); it != ls.end(); ++it)
-    {
-        cout << *it << endl;
-        cout << FileTool::get_pure_dir(*it) << endl;
-        cout << FileTool::get_short_name(*it) << endl;
-        cout << FileTool::get_suffix(*it) << endl;
-        cout << FileTool::get_absolute_dir(*it) << endl;
-        cout << FileTool::is_exist(*it) << " " << FileTool::is_readable(*it) << endl;
-        cout << FileTool::is_writable(*it) << " " << FileTool::is_executable(*it) << endl;
-    }
-
-    cout << "//////////////////////////" << endl;
-
-    //list<string> ds = FileTool::get_dirs("/Users/xinmei365/kika-content-manager", true);
-    list<string> ds = FileTool::get_dirs(".", true);
-    for(it = ds.begin(); it != ds.end(); ++it)
-    {
-        cout << *it << endl;
-        cout << FileTool::format_dir(*it) << endl;
-    }
-
-    return 0;
-}
 #endif //UNTITLED1_FILETOOL_H
