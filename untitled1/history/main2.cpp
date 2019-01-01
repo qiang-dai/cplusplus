@@ -25,7 +25,7 @@ int main21() {
 }
 
 
-int main2() {
+int main2x() {
     cout << "first contruct >>>" << endl;
     CSmartPtr<CWorkPtr> pNewPtr = new CWorkPtr();
     pNewPtr->Disp();
