@@ -32,7 +32,7 @@ public:
             bool is_recursive = false);
 };
 
-int main()
+int mainft1()
 {
     //list<string> ls = FileTool::get_files("/Users/xinmei365/kika-content-manager", true);
     list<string> ls = FileTool::get_files(".", true);

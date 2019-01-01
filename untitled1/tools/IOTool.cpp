@@ -21,7 +21,7 @@ string IOTool::read_line(const string filename) {
     in.close();
     return buffer;
 }
-vector<string> IOTool::read(const string filename, int limit) {
+list<string> IOTool::read(const string filename, int limit) {
     char buffer[256];
     ifstream in(filename);
     if (!in.is_open())
@@ -29,7 +29,7 @@ vector<string> IOTool::read(const string filename, int limit) {
         cout << "Error opening file:" + filename << endl;
     }
 
-    vector<string> vec;
+    list<string> vec;
     while (!in.eof())
     {
         in.getline(buffer, 255);
@@ -40,7 +40,7 @@ vector<string> IOTool::read(const string filename, int limit) {
     }
     in.close();
     //trim last empty string
-    if (vec.size() > 0 && vec[vec.size() - 1] == "") {
+    if (vec.size() > 0 && strncmp(buffer, ".", 1) == 0) {
         vec.pop_back();
     }
 
@@ -89,21 +89,22 @@ char *IOTool::read_binary(const string filename)
     return buffer;
 }
 ///////////////////////////////////////////////////
-bool IOTool::write(const string filename, string s) {
+bool IOTool::write(const string filename, string line) {
     ofstream out(filename);
     if (out.is_open())
     {
-        out << s << endl;
+        out << line << endl;
     }
     return true;
 }
 
-bool IOTool::write(const string filename, vector<string> &vec)
+bool IOTool::write(const string filename, list<string> &line_list)
 {
     ofstream out(filename);
-    for(int i = 0; i < vec.size(); i++)
+    list<string>::iterator it;
+    for(it = line_list.begin(); it != line_list.end(); ++it)
     {
-        out << vec[i] << endl;
+        out << *it << endl;
     }
     return true;
 }
@@ -229,7 +230,7 @@ bool sort_vector(vector<int> &vec)
     return true;
 }
 
-int mainio1()
+int main()
 {
     IOTool::write("a.txt", "good try");
     vector<string> vec;
@@ -238,7 +239,8 @@ int mainio1()
     vec.push_back("c");
     vec.push_back("dd");
 
-    IOTool::write("b.txt", vec);
+    list<string> list_tmp;
+    IOTool::write("b.txt", list_tmp);
 
     vec.clear();
     string s = IOTool::read_line("a.txt");
@@ -246,13 +248,13 @@ int mainio1()
     s = IOTool::read_line("b.txt");
     cout << "s= " << s << endl;
 
-    vec = IOTool::read("b.txt", 2);
+    list_tmp = IOTool::read("b.txt", 2);
     for(int i = 0; i < vec.size(); i++) {
         cout << i << ": " << vec[i] << endl;
     }
-    list<string> tmp_list = IOTool::read_list("b.txt");
+    list_tmp = IOTool::read_list("b.txt");
     list<string>::iterator it;
-    for(it = tmp_list.begin(); it != tmp_list.end(); ++it) {
+    for(it = list_tmp.begin(); it != list_tmp.end(); ++it) {
         cout << "list item: " << *it << endl;
     }
 
@@ -304,4 +306,6 @@ int mainio1()
     boost::scoped_ptr<char> scoped_ptr(IOTool::read_binary("b.txt"));
     cout << scoped_ptr.operator*() << endl;
     cout << scoped_ptr.operator->() << endl;
+
+    return 0;
 }

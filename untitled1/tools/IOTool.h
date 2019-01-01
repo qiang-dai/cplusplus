@@ -21,10 +21,10 @@ class IOTool
 public:
     ///////////////////////////////////////////////////
     static string read_line(const string filename);
-    static vector<string> read(const string filename, int limit = 10000);
+    static list<string> read(const string filename, int limit = 10000);
     static list<string> read_list(const string filename, int limit = 10000);
-    static bool write(const string filename, const string s);
-    static bool write(const string filename, vector<string> &vec);
+    static bool write(const string filename, const string line);
+    static bool write(const string filename, list<string> &line_list);
     ///////////////////////////////////////////////////
     static long get_files_size(const string filename);
     ///////////////////////////////////////////////////
