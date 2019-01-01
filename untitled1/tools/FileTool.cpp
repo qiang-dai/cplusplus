@@ -30,6 +30,51 @@ string FileTool::get_absolute_dir(const string &input_path)
     }
     return path;
 }
+bool FileTool::is_exist(const string &filename)
+{
+    if (access(filename.c_str(), F_OK) == 0)
+    {
+        return true;
+    }
+    return false;
+}
+
+bool FileTool::is_readable(const string &filename)
+{
+    if (!is_exist(filename))
+    {
+        return false;
+    }
+    if (access(filename.c_str(), R_OK) != 0)
+    {
+        return false;
+    }
+    return true;
+}
+bool FileTool::is_writable(const string &filename)
+{
+    if (!is_exist(filename))
+    {
+        return false;
+    }
+    if (access(filename.c_str(), W_OK) != 0)
+    {
+        return false;
+    }
+    return true;
+}
+bool FileTool::is_executable(const string &filename)
+{
+    if (!is_exist(filename))
+    {
+        return false;
+    }
+    if (access(filename.c_str(), X_OK) != 0)
+    {
+        return false;
+    }
+    return true;
+}
 //get short name
 string FileTool::get_short_name(const string &s)
 {
