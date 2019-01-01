@@ -32,7 +32,7 @@ void *print_hello(void *threadarg)
 
     pthread_exit(NULL);
 }
-int maint1()
+int mainth1()
 {
     pthread_t tids[NUM_THREADS];
     int indexes[NUM_THREADS];

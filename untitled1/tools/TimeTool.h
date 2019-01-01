@@ -30,7 +30,7 @@ public:
     static string read_day(string s, int &year, int &mon, int &day);
 };
 
-int main()
+int maint1()
 {
     cout << TimeTool::get_current_desc() << endl;
     cout << "tick: " << TimeTool::get_tick() << endl;
@@ -70,5 +70,7 @@ int main()
     cout << "d: " << d << endl;
     d = IOTool::replace_first(s, ' ', '_');
     cout << "d: " << d << endl;
+
+    return 0;
 }
 #endif //UNTITLED1_TIME_TOOL_H
