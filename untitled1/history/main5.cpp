@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <cstdlib>
-#include "Child.h"
+#include "../Child.h"
+#include <stdio.h>
+#include <pthread.h>
+#include <boost/scoped_ptr.hpp>
+#include "boost/scoped_array.hpp"
+#include "boost/scoped_ptr.hpp"
 
 int main51(int argc, char *argv[]) {
     int first = 0;
@@ -16,8 +21,6 @@ int main51(int argc, char *argv[]) {
     return 0;
 }
 
-#include <stdio.h>
-#include <pthread.h>
 
 pthread_mutex_t mutext2;
 //int arr[] = new int[5]{0};
@@ -80,16 +83,20 @@ int main52(int argc, char *argv[]) {
     return 0;
 }
 
-int main53() {
-    int *pia = new int[10];
-    int *pia2= new int[10]();
-    string *psa = new string[10];
-    string *psa2= new string[10]{};
+int main() {
+    boost::scoped_array<int> pia(new int[10]);
+    boost::scoped_array<int> pia2(new int[10]());
+    //int *pia = new int[10];
+    //int *pia2= new int[10]();
+//    string *psa = new string[10];
+//    string *psa2= new string[10]{};
 
-    char *cp = new char[0];
-    delete []pia;
+    //char *cp = new char[0];
+    boost::scoped_ptr<char> cp(new char[0]);
+    //delete []pia;
 
     const char *pc = "a very long literal string";
+    //boost::scoped_ptr<char> pc(new "a very long literal string");
     const size_t len = strlen(pc) + 1;
     for(size_t ix = 0; ix != 1000000; ++ix) {
         char *pc2 = new char[len];
@@ -100,6 +107,7 @@ int main53() {
     int b = 3;
     int c = 4;
     int const *p = &b;
+    //boost::scoped_ptr<int> p3(&b);
     //*p = 5;
     int * const p2 = &b;
     //p2 = &c;
@@ -113,6 +121,10 @@ int main53() {
 
     int a[2][3];
 
+    boost::scoped_array<string> psa(new string[10]);
+    boost::scoped_array<string> psa2(new string[10]());
+    boost::scoped_array<string> psa22(new string[10]{"abc"});
+    boost::scoped_ptr<string> psa3(new string("hello world"));
 
 }
 int get_array() {

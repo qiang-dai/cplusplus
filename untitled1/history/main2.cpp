@@ -2,12 +2,12 @@
 #include <string>
 #include <boost/scoped_ptr.hpp>
 #include <boost/shared_ptr.hpp>
-#include "CSmartPtr.cpp"
-#include "Book.h"
-#include "X.h"
-#include "Child.h"
-#include "tt.h"
-#include "MyString.h"
+#include "../CSmartPtr.cpp"
+#include "../Book.h"
+#include "../X.h"
+#include "../Child.h"
+#include "../tt.h"
+#include "../MyString.h"
 
 using namespace std;
 
