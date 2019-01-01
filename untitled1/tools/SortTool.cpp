@@ -32,6 +32,11 @@ bool SortTool::reverse_vector(vector<int> &vec)
     return true;
 }
 
+/*
+see more at:
+
+https://blog.csdn.net/marising/article/details/4567531
+ */
 int main()
 {
     vector<int> vec;
