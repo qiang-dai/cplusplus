@@ -4,7 +4,7 @@
 
 #include "IOTool.h"
 ///////////////////////////////////////////////////
-string IOTool::read_line(string filename) {
+string IOTool::read_line(const string filename) {
     char buffer[256];
     ifstream in(filename);
     if (!in.is_open())
@@ -21,7 +21,7 @@ string IOTool::read_line(string filename) {
     in.close();
     return buffer;
 }
-vector<string> IOTool::read(string filename, int limit) {
+vector<string> IOTool::read(const string filename, int limit) {
     char buffer[256];
     ifstream in(filename);
     if (!in.is_open())
@@ -46,7 +46,7 @@ vector<string> IOTool::read(string filename, int limit) {
 
     return vec;
 }
-list<string> IOTool::read_list(string filename, int limit) {
+list<string> IOTool::read_list(const string filename, int limit) {
     char buffer[256];
     ifstream in(filename);
     if (!in.is_open())
@@ -73,7 +73,7 @@ list<string> IOTool::read_list(string filename, int limit) {
     return tmp_list;
 }
 ///////////////////////////////////////////////////
-char *IOTool::read_binary(string filename)
+char *IOTool::read_binary(const string filename)
 {
     long size = get_files_size(filename);
     char *buffer = new char[size];
@@ -89,7 +89,7 @@ char *IOTool::read_binary(string filename)
     return buffer;
 }
 ///////////////////////////////////////////////////
-bool IOTool::write(string filename, string s) {
+bool IOTool::write(const string filename, string s) {
     ofstream out(filename);
     if (out.is_open())
     {
@@ -98,7 +98,7 @@ bool IOTool::write(string filename, string s) {
     return true;
 }
 
-bool IOTool::write(string filename, vector<string> vec)
+bool IOTool::write(const string filename, vector<string> &vec)
 {
     ofstream out(filename);
     for(int i = 0; i < vec.size(); i++)
@@ -108,7 +108,7 @@ bool IOTool::write(string filename, vector<string> vec)
     return true;
 }
 ///////////////////////////////////////////////////
-long IOTool::get_files_size(string filename)
+long IOTool::get_files_size(const string filename)
 {
     long l,m;
     ifstream in(filename, ios::in|ios::binary);
@@ -138,7 +138,7 @@ string IOTool::double2string(double v)
     ss << v;
     return ss.str();
 }
-int IOTool::string2int(string s)
+int IOTool::string2int(const string &s)
 {
     int n;
     stringstream ss;
@@ -146,7 +146,7 @@ int IOTool::string2int(string s)
     ss >> n;
     return n;
 }
-long IOTool::string2long(string s)
+long IOTool::string2long(const string &s)
 {
     long n;
     stringstream ss;
@@ -154,7 +154,7 @@ long IOTool::string2long(string s)
     ss >> n;
     return n;
 }
-double IOTool::string2double(string s)
+double IOTool::string2double(const string &s)
 {
     double n;
     stringstream ss;

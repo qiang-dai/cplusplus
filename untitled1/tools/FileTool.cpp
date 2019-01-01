@@ -10,27 +10,37 @@
 #include <sys/stat.h>
 #include "boost/scoped_ptr.hpp"
 
-string FileTool::get_pure_dir(string s)
+string FileTool::get_pure_dir(const string &s)
 {
-    size_t pos = s.rfind('.');
+    size_t pos = s.rfind('/');
     if (pos != string::npos)
     {
-        return s.substr(0, pos);
+        return s.substr(0, pos+1);
     }
     return s;
 }
 //get short name
-string FileTool::get_short_name(string s)
+string FileTool::get_short_name(const string &s)
+{
+    size_t pos = s.rfind('/');
+    if (pos != string::npos)
+    {
+        return s.substr(pos+1);
+    }
+    return s;
+}
+
+string FileTool::get_suffix(const string &s)
 {
     size_t pos = s.rfind('.');
     if (pos != string::npos)
     {
-        return s.substr(pos);
+        return s.substr(pos+1);
     }
     return s;
 }
 //tail with '/'
-string FileTool::format_dir(string s)
+string FileTool::format_dir(string &s)
 {
     if (s.size() == 0)
     {
@@ -43,14 +53,14 @@ string FileTool::format_dir(string s)
     return s;
 }
 
-list<string> FileTool::get_files(string dir, bool is_recursive)
+list<string> FileTool::get_files(const string dir, bool is_recursive)
 {
     list<string> file_name;
     list<string> dir_name;
     get_files(dir, file_name, dir_name, is_recursive);
     return file_name;
 }
-int FileTool::get_files(string path, list<string> &file_name, list<string> &dir_name, bool is_recursive)
+int FileTool::get_files(const string path, list<string> &file_name, list<string> &dir_name, bool is_recursive)
 {
     struct dirent *dirp;
 
@@ -136,7 +146,7 @@ int FileTool::get_files(string path, list<string> &file_name, list<string> &dir_
 //
 //    return file_name;
 //}
-list<string> FileTool::get_dirs(string dir, bool is_recursive)
+list<string> FileTool::get_dirs(const string dir, bool is_recursive)
 {
     list<string> file_name;
     list<string> dir_name;

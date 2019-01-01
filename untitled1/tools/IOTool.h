@@ -20,21 +20,21 @@ class IOTool
 {
 public:
     ///////////////////////////////////////////////////
-    static string read_line(string filename);
-    static vector<string> read(string filename, int limit = 10000);
-    static list<string> read_list(string filename, int limit = 10000);
-    static bool write(string filename, string s);
-    static bool write(string filename, vector<string> vec);
+    static string read_line(const string filename);
+    static vector<string> read(const string filename, int limit = 10000);
+    static list<string> read_list(const string filename, int limit = 10000);
+    static bool write(const string filename, const string s);
+    static bool write(const string filename, vector<string> &vec);
     ///////////////////////////////////////////////////
-    static long get_files_size(string filename);
+    static long get_files_size(const string filename);
     ///////////////////////////////////////////////////
-    static char *read_binary(string filename);
+    static char *read_binary(const string filename);
     static string long2string(long v);
     static string int2string(int v);
     static string double2string(double v);
-    static int string2int(string s);
-    static long string2long(string s);
-    static double string2double(string s);
+    static int string2int(const string &s);
+    static long string2long(const string &s);
+    static double string2double(const string &s);
     static string size_to_read(long size);
     ///////////////////////////////////////////////////
     static string replace(string &src, char c, char d);
