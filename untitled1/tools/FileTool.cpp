@@ -9,6 +9,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include "boost/scoped_ptr.hpp"
+#include <limits.h>
+#include <stdlib.h>
 
 string FileTool::get_pure_dir(const string &s)
 {
@@ -18,6 +20,15 @@ string FileTool::get_pure_dir(const string &s)
         return s.substr(0, pos+1);
     }
     return s;
+}
+string FileTool::get_absolute_dir(const string &input_path)
+{
+    char path[256] = {0};
+    if (input_path.size() > PATH_MAX || NULL==realpath(input_path.c_str(),path))
+    {
+        return path;
+    }
+    return path;
 }
 //get short name
 string FileTool::get_short_name(const string &s)

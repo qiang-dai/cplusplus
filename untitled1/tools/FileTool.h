@@ -15,6 +15,7 @@ class FileTool
 public:
     //without short name
     static string get_pure_dir(const string &s);
+    static string get_absolute_dir(const string &s);
     //get short name
     static string get_short_name(const string &s);
     //without dot, like mp4
@@ -29,7 +30,8 @@ public:
 
 int main()
 {
-    list<string> ls = FileTool::get_files("/Users/xinmei365/kika-content-manager", true);
+    //list<string> ls = FileTool::get_files("/Users/xinmei365/kika-content-manager", true);
+    list<string> ls = FileTool::get_files(".", true);
     list<string>::iterator it;
     for(it = ls.begin(); it != ls.end(); ++it)
     {
@@ -37,11 +39,13 @@ int main()
         cout << FileTool::get_pure_dir(*it) << endl;
         cout << FileTool::get_short_name(*it) << endl;
         cout << FileTool::get_suffix(*it) << endl;
+        cout << FileTool::get_absolute_dir(*it) << endl;
     }
 
     cout << "//////////////////////////" << endl;
 
-    list<string> ds = FileTool::get_dirs("/Users/xinmei365/kika-content-manager", true);
+    //list<string> ds = FileTool::get_dirs("/Users/xinmei365/kika-content-manager", true);
+    list<string> ds = FileTool::get_dirs(".", true);
     for(it = ds.begin(); it != ds.end(); ++it)
     {
         cout << *it << endl;
