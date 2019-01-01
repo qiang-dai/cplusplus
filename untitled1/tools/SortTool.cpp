@@ -37,7 +37,7 @@ see more at:
 
 https://blog.csdn.net/marising/article/details/4567531
  */
-int main()
+int mainst1()
 {
     vector<int> vec;
     vec.push_back(1);
