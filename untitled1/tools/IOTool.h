@@ -40,6 +40,4 @@ public:
     static string replace(string &src, char c, char d);
     static string replace_first(string &src, char c, char d);
 };
-
-
 #endif //UNTITLED1_IOTOOL_H

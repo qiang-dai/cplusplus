@@ -218,19 +218,9 @@ string IOTool::replace_first(string &src, char c, char d)
 }
 
 
-bool less_int(int a, int b)
-{
-    return b < a;
-}
 
-bool sort_vector(vector<int> &vec)
-{
-    //sort(vec.begin(), vec.end());
-    sort(vec.begin(), vec.end(), less_int);
-    return true;
-}
 
-int main()
+int mainiot3()
 {
     IOTool::write("a.txt", "good try");
     vector<string> vec;
@@ -297,7 +287,6 @@ int main()
     vec2.push_back(9);
     vec2.push_back(5);
     vec2.push_back(7);
-    sort_vector(vec2);
     for(int i = 0; i < vec2.size(); i++)
     {
         cout << i << ": " << vec2[i] << endl;
