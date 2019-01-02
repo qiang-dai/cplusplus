@@ -30,14 +30,3 @@ int32_t ShellTool::myexec(const char *cmd, vector<string> &resvec)
     return resvec.size();
 }
 
-int main()
-{
-    char *cmd = "ls -l";
-    vector<string> vec;
-    ShellTool::myexec(cmd, vec);
-    for(int i = 0; i < vec.size(); i++)
-    {
-        cout << i << ": " << vec[i] << endl;
-    }
-    return 0;
-}

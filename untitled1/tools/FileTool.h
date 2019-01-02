@@ -22,7 +22,7 @@ public:
     static bool is_executable(const string &filename);
     //get short name
     static string get_short_name(const string &filename);
-    //without dot, like mp4
+    //without dot, like a.mp4 -> mp4
     static string get_suffix(const string &filename);
     //tail with '/'
     static string format_dir(string &dir);

@@ -71,11 +71,11 @@ int main82()
 {
 //    Test test;
 //    test.Add(add, 1, 2);
-    Test test;
-    test.Add(add, 1, 2);
-
-    TestAdd testAdd;
-    test.Add(std::bind(&TestAdd::Add, testAdd, std::placeholders::_1, std::placeholders::_2), 1, 2);
+//    Test test;
+//    test.Add(add, 1, 2);
+//
+//    TestAdd testAdd;
+//    test.Add(std::bind(&TestAdd::Add, testAdd, std::placeholders::_1, std::placeholders::_2), 1, 2);
 
     auto add= [](int a, int b)->int{
         return a + b;
