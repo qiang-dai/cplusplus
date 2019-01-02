@@ -14,5 +14,4 @@ TEST(test2, c2)
         cout << i << ": " << vec[i] << endl;
     }
     EXPECT_GT(vec.size(), 0);
-//return 0;
 }
