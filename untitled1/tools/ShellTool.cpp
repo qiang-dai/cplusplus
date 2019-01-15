@@ -2,6 +2,7 @@
 // Created by xinmei365 on 2019/1/1.
 //
 
+#include <cstring>
 #include "ShellTool.h"
 
 int32_t ShellTool::myexec(const char *cmd, vector<string> &resvec)

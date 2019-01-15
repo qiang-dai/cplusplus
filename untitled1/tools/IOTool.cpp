@@ -2,6 +2,7 @@
 // Created by xinmei365 on 2019/1/1.
 //
 
+#include <cstring>
 #include "IOTool.h"
 ///////////////////////////////////////////////////
 string IOTool::read_line(const string filename) {

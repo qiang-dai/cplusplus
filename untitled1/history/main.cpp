@@ -124,10 +124,10 @@ int main00(int argc, char* argv[])
     printf("%d\n", sizeof(ary)); // ok. 输出10
 
 
-    char* pc = "abc";
+    char* const pc = "abc";
     int* pi;
     string* ps;
-    char** ppc = &pc;
+    char* const * ppc = &pc;
     void (*pf)(); // 函数指针
     cout << sizeof( pc ) << endl; // 结果为4
     cout << sizeof( pi ) << endl; // 结果为4

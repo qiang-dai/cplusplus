@@ -5,7 +5,7 @@
 #ifndef UNTITLED1_CHILD_H
 #define UNTITLED1_CHILD_H
 
-#include <boost/shared_ptr.hpp>
+#include "boost/shared_ptr.hpp"
 #include "iostream"
 using namespace std;
 class Parent;

@@ -3,6 +3,7 @@
 //
 
 #include "SortTool.h"
+#include "algorithm"
 bool SortTool::less_int(int a, int b)
 {
     return b < a;

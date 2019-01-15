@@ -11,6 +11,7 @@
 #include "boost/scoped_ptr.hpp"
 #include <limits.h>
 #include <stdlib.h>
+#include <cstring>
 
 string FileTool::get_pure_dir(const string &s)
 {

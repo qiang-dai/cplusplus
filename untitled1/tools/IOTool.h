@@ -11,6 +11,7 @@
 #include "fstream"
 #include "iostream"
 #include "sstream"
+#include <algorithm>
 #include "boost/scoped_ptr.hpp"
 #include "boost/scoped_array.hpp"
 

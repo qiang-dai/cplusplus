@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include <cstring>
 
 class MyString {
 private:
