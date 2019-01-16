@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include "../tools/LogTool.h"
 
 using namespace std;
 
@@ -70,7 +71,35 @@ public:
     virtual void Foo(void){}
 };
 
-int main() {
+template <class T>
+struct MyIter {
+    typedef T value_type;
+    T* ptr;
+    MyIter(T* p = 0) : ptr(p) {}
+    T& operator*() const {return *ptr;}
+};
+
+template <class I>
+typename I::value_type func2(I iter) {
+    return *iter;
+}
+
+template <typename  Iterator, typename T>
+void func_impl(Iterator iter, T t)
+{
+    T temp;
+}
+
+template <typename Iterator>
+void func(Iterator iter)
+{
+    func_impl(iter, *iter);
+}
+
+
+int mainm4() {
+    ___TRACE("vtable:%d\n", 0);
+
     A a;
     char *p1 = reinterpret_cast<char *>(&a);
     char *p2 = reinterpret_cast<char *>(&a.n);
@@ -102,5 +131,10 @@ int main() {
     g();
     h();
 
+    MyIter<int> iter(new int(8));
+    cout << func2(iter) << endl;
+
+    int i;
+    func(&i);
     return 0;
 }

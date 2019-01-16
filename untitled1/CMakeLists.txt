@@ -32,7 +32,7 @@ if(Boost_FOUND)
         tt.cpp
         MyString.cpp
         )
-    add_executable(untitled1 history/main.cpp history/main2.cpp Book.cpp Book.h X.cpp X.h Child.cpp Child.h tt.cpp tt.h MyString.cpp MyString.h history/main3.cpp history/main4.cpp history/main5.cpp history/main6.cpp history/main7.cpp history/main8.cpp Test.cpp Test.h TestAdd.cpp TestAdd.h history/main9.cpp thread/thread1.cpp thread/thread2.cpp thread/thread3.cpp thread/thread4.cpp tools/TimeTool.cpp tools/TimeTool.h tools/IOTool.cpp tools/IOTool.h tools/FileTool.cpp tools/FileTool.h tools/ShellTool.cpp tools/ShellTool.h tools/SortTool.cpp tools/SortTool.h mian.cpp test/ShellToolTest.cpp test/v.cpp)
+    add_executable(untitled1 history/main.cpp history/main2.cpp Book.cpp Book.h X.cpp X.h Child.cpp Child.h tt.cpp tt.h MyString.cpp MyString.h history/main3.cpp history/main4.cpp history/main5.cpp history/main6.cpp history/main7.cpp history/main8.cpp Test.cpp Test.h TestAdd.cpp TestAdd.h history/main9.cpp thread/thread1.cpp thread/thread2.cpp thread/thread3.cpp thread/thread4.cpp tools/TimeTool.cpp tools/TimeTool.h tools/IOTool.cpp tools/IOTool.h tools/FileTool.cpp tools/FileTool.h tools/ShellTool.cpp tools/ShellTool.h tools/SortTool.cpp tools/SortTool.h mian.cpp test/ShellToolTest.cpp test/v.cpp tools/LogTool.cpp tools/LogTool.h test/traits.cpp test/traits2.cpp test/x.cpp tools/ThreadTool.cpp tools/ThreadTool.h thread/thread5.cpp thread/thread6.cpp thread/thread7.cpp thread/decltype_use.cpp thread/pol.cpp)
     #target_link_libraries(${PROJECT_NAME} gtest)
     target_link_libraries(${PROJECT_NAME} ${GTEST_LIBRARIES})
 endif()
